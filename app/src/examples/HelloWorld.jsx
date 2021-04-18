@@ -4,9 +4,13 @@ import { useForm } from '../../../lib/use-form';
 const HelloWorld = () => {
   const {
     fields: [greetings],
-    getData
-  } = useForm([{ name: 'greetings', value: 'Hello World!' }]);
-  
+  } = useForm([
+    {
+      name: 'greetings',
+      value: 'Hello World!',
+    },
+  ]);
+
   return (
     <>
       <h1>{`${greetings.value || '<empty>'}`}</h1>
