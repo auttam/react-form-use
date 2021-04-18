@@ -76,6 +76,10 @@ export type Usable = {
      * flag that indicates at least one field is invalid
      */
     isInvalid: boolean;
+    /**
+     * handler for the `onSubmit` event of the `<form />`
+     */
+    handleSubmit: Function;
 };
 /**
  * @typedef {object} Usable Field State
@@ -86,12 +90,14 @@ export type Usable = {
  * @property {Function} validate runs validation on all the fields
  * @property {Boolean} isDirty flag that indicates at least one field is dirty
  * @property {Boolean} isInvalid flag that indicates at least one field is invalid
+ * @property {Function} handleSubmit handler for the `onSubmit` event of the `<form />`
  *
  */
 /**
  * Create usable object containing fields and helpers function
  * @param {Array.<Object>} state
  * @param {Function} dispatch
+ * @param {Object} formOptions
  * @return {Usable}
  */
-declare function createUsable(state: Array<any>, dispatch: Function): Usable;
+declare function createUsable(state: Array<any>, dispatch: Function, formOptions: any): Usable;

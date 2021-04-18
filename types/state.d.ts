@@ -8,14 +8,8 @@ export const ACTIONS: Readonly<{
     VALIDATE_FIELD: number;
     VALIDATE_ALL: number;
 }>;
-export function initialize(optionsList: Array<Options>): {
+export function initialize(fieldOptions: Array<Options>): {
     name: any;
-    /**
-     * Executes validate method of the field
-     * @param {Object} field
-     * @param {Array} state
-     * @returns {String} validation error
-     */
     value: any;
     initialValue: any;
     transform: any;
@@ -24,11 +18,13 @@ export function initialize(optionsList: Array<Options>): {
     error: string;
     invalid: boolean;
 }[];
-export function reducer(state: any[], { action, fieldName, data }: {
+export function reducer(state: any[], { action, fieldName, data, callback }: {
     action: string;
     fieldName: string;
     data: any;
+    callback: any;
 }): any[];
+export function createFormData(state: any[]): FormData;
 export type SetFieldErrorCallback = (error: string) => void;
 export type GetFieldCallback = (fieldName: string) => import("./field").FieldData;
 /**
@@ -70,4 +66,46 @@ export type Options = {
      * - callback to validate the value
      */
     validate: ValidateCallback;
+};
+/**
+ * returns value of a field
+ */
+export type FormDataGetValueCallback = () => string | boolean;
+/**
+ * returns data serialized into json
+ */
+export type FormDataGetFieldsCallback = () => Array<{
+    name: string;
+    value: string;
+}>;
+/**
+ * returns data as a plain object
+ */
+export type FormDataGetObjectCallback = () => any;
+/**
+ * - represents a collection fields with value
+ */
+export type FormData = {
+    /**
+     * - returns value of a field
+     */
+    getValue: FormDataGetValueCallback;
+    /**
+     * - returns data serialized into json
+     */
+    getFields: any;
+    /**
+     * - returns data as a plain object
+     */
+    getObject: FormDataGetObjectCallback;
+};
+export type SubmitCallback = (formData: FormData) => void;
+/**
+ * - represents a collection fields with value
+ */
+export type FormOptions = {
+    /**
+     * a function called on the form submit
+     */
+    submit: SubmitCallback;
 };

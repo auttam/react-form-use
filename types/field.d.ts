@@ -1,4 +1,4 @@
-export function createFromOptions({ name, value, transform, validate }: any): {
+export function createFromOptions({ name, value, transform, validate, }: any): {
     name: any;
     value: any;
     initialValue: any;

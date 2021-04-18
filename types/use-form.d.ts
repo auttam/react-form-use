@@ -1,6 +1,7 @@
 /**
  * Use Form Hook
- * @param {Array.<import('./state').Options>} optionsList array of field options
+ * @param {Array.<import('./state').Options>} fieldOptions array of field options
+ * @param {import('./state').FormOptions} formOptions function called on form submit
  * @returns {import('./usable').Usable}
  */
-export function useForm(optionsList: Array<import('./state').Options>): import('./usable').Usable;
+export function useForm(fieldOptions: Array<import('./state').Options>, formOptions?: import('./state').FormOptions): import('./usable').Usable;
