@@ -1,0 +1,60 @@
+{
+  "name": "react-form-use",
+  "version": "1.0.0",
+  "description": "A react hook for the react forms",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch",
+    "lint": "eslint index.js lib/",
+    "start": "parcel app/src/index.html --out-dir app/www -p 3030 --open",
+    "types": "tsc lib/use-form.js --allowJs --declaration --declaration --emitDeclarationOnly --outDir types --excludeFiles lib/**/*.test.js",
+    "build": "npm run lint && jest && npm run types"
+  },
+  "types": "./types/use-form.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auttam/react-form-use.git"
+  },
+  "keywords": [
+    "react",
+    "useForm",
+    "react-form",
+    "react-hook",
+    "react-form-hook",
+    "form",
+    "react-use-form",
+    "use-form",
+    "use-form-react"
+  ],
+  "author": "Ashish Uttam",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/auttam/react-form-use/issues"
+  },
+  "homepage": "https://github.com/auttam/react-form-use#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/preset-react": "^7.13.13",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.24.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.3.5",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "jest": "^26.6.3",
+    "parcel-bundler": "^1.12.5",
+    "typescript": "^4.2.4",
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  }
+}
