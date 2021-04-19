@@ -52,6 +52,9 @@ Check [this page](https://github.com/auttam/react-form-use/wiki/API) for the ful
 import React from 'react';
 import { useForm } from 'react-form-use'; // 1. import the hook
 
+// Source: https://stackoverflow.com/a/742455
+const email_regex = /^\S+@\S+$/;
+
 export default function App() {
   const {
     fields: [fullName, email],
