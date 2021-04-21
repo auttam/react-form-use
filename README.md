@@ -40,7 +40,7 @@ const {
   ...helpers
 } = useForm(
   [{ ...fieldOptions1 }, { ...fieldOptions2 }, ...moreOptions],
-  formOptions
+  formOptions,
 );
 ```
 
@@ -79,12 +79,14 @@ const App = () => {
       { name: 'name', validate: ({ value }) => !!value },
       {
         name: 'email',
-        // You can also call setError method to mark field invalid
-        // Use this method to set custom error message
+        // You can also call setError method
+        // to set a custom error message
         validate: ({ value, setError }) => {
           if (!email_regex.test(value)) {
             setError('Please enter valid email!');
+            return false;
           }
+          return true;
         },
       },
     ],
