@@ -61,7 +61,6 @@ Check [this page](https://github.com/auttam/react-form-use/wiki/API) for the ful
 ```jsx
 import React from 'react';
 import { useForm } from 'react-form-use'; // 1. import form
-import './style.css';
 
 // Source: https://stackoverflow.com/a/742455
 const email_regex = /^\S+@\S+$/;
@@ -75,7 +74,8 @@ const App = () => {
   } = useForm(
     [
       // Add validate callback to validate the field
-      // onChange and onSubmit. Return true for valid value
+      // onChange and onSubmit events.
+      // Return 'true' to mark field as valid
       { name: 'name', validate: ({ value }) => !!value },
       {
         name: 'email',
