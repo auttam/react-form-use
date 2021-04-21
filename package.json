@@ -1,6 +1,6 @@
 {
   "name": "react-form-use",
-  "version": "1.0.1-beta.0",
+  "version": "1.0.1",
   "description": "A simple hook for your react forms",
   "main": "index.js",
   "scripts": {
