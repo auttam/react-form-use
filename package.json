@@ -1,7 +1,7 @@
 {
   "name": "react-form-use",
-  "version": "1.0.0",
-  "description": "A react hook for the react forms",
+  "version": "1.0.1-beta.0",
+  "description": "A simple hook for your react forms",
   "main": "index.js",
   "scripts": {
     "test": "jest --watch",
